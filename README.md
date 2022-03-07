@@ -1,5 +1,6 @@
-# **O QUE É?**
-### Este projeto é a primeira versão de um site para gerenciamento de ramais. 
+# **SOBRE O PROJETO RAMALAPP**
+### Este projeto é a primeira versão de um site para gerenciamento de ramais.
+### A versão Oficial e mais complexa deste projeto está sendo desenvolvida em [ramalapp-Oficial](https://github.com/BarbaraZamperete/ramalApp-Oficial)  
 #### Usuários podem ser administradores ou não. Apenas usuários administradores podem adicionar ou remover ramais. 
 #### Ramais podem ser Virtuais (não possuem ip, nem localização no raque), Analógicos, Digitais ou IP.
 
@@ -11,7 +12,7 @@
 - DB_HOST
 
 
-# **COMO RODAR O PROJETO RAMALAPP-PROTÓTIPO**
+# **Como rodar o projeto RamalApp?**
 1. Instalar todas as dependencias indicadas pelo package.json
 > npm install
 
