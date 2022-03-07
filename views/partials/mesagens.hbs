@@ -1,0 +1,26 @@
+{{#if success_msg}}
+<div class="box-msg container success" id="box-msg">
+    <h3>{{success_msg}}</h3>
+</div>
+<script type="text/javascript">
+    // close the div in 5 secs
+    window.setTimeout("closeHelpDiv();", 1500);
+
+    function closeHelpDiv() {
+        document.getElementById("box-msg").style.display = "none";
+    }
+</script>
+{{/if}}
+{{#if alert_msg}}
+<div class="box-msg container alert" id="box-msg">
+    <h3>{{alert_msg}}</h3>
+</div>
+<script type="text/javascript">
+    // close the div in 5 secs
+    window.setTimeout("closeHelpDiv();", 1500);
+
+    function closeHelpDiv() {
+        document.getElementById("box-msg").style.display = "none";
+    }
+</script>
+{{/if}}

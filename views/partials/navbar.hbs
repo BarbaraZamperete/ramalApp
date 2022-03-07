@@ -1,0 +1,55 @@
+<nav class="navbar">
+    <section class="container flex-row nav-container">
+        <div class="title">Controle de Ramais - NTI</div>
+        <ul class="nav-menu flex-row">
+            <li><a href="/" class="nav-option">Menu</a></li>
+            {{#if user}}
+            <div class="dropdown" id="ramalDrop">
+                <button onclick="myFunctionR()" class="dropbtn flex-row">Ramais
+                    <span class="material-icons">&#xe5cf;</span>
+                </button>
+                <div id="myDropdownRamal" class="dropdown-content">
+                    <a href="/ramais">Todos os Ramais </a>
+                    <a href="/add-ramal-form">Adicionar Ramal </a>
+                    <a href="/ramais/buscar">Buscar Ramal <span class="material-icons">&#xe8b6;</span> </a>
+                </div>
+            </div>
+            <div class="dropdown" id="userDrop">
+                <button onclick="myFunctionU()" class="dropbtn flex-row">User
+                    <span class="material-icons">&#xe5cf;</span>
+                </button>
+                <div id="myDropdownUser" class="dropdown-content">
+                    {{#if user.dataValues.adm}}
+                    <a href="/add-user-form">Adicionar Usuário</a>
+                    {{/if}}
+                    <a href="/senha-alterar">Alterar Senha</a>
+                    <a href="/logout">Sair</a>
+                </div>
+            </div>
+            {{else}}
+            <li><a href="/login" class="nav-option">Entrar</a></li>
+            {{/if}}
+        </ul>
+    </section>
+</nav>
+<script type="text/javascript">
+    const ramalDrop = document.getElementById("ramalDrop");
+    const userDrop = document.getElementById("userDrop");
+    ramalDrop.addEventListener("mouseover", ()=>{
+        const myDropRamal = document.getElementById("myDropdownRamal");
+        myDropRamal.classList.add("show");
+    })
+    ramalDrop.addEventListener("mouseleave", ()=>{
+        const myDropRamal = document.getElementById("myDropdownRamal");
+        myDropRamal.classList.remove("show");
+    })
+    userDrop.addEventListener("mouseover", ()=>{
+        const myDropUser = document.getElementById("myDropdownUser");
+        myDropUser.classList.add("show");
+    })
+    userDrop.addEventListener("mouseleave", ()=>{
+        const myDropUser = document.getElementById("myDropdownUser");
+        myDropUser.classList.remove("show");
+    })
+    
+</script>

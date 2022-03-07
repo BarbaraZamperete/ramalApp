@@ -1,0 +1,16 @@
+<div class="container add-user-form">
+    <form action="/add-user" method="POST" class="flex-column">
+        <label for="login">Login:</label>
+        <input name="login" type="text" placeholder="login" required>
+        <label for="senha">Senha:</label>
+        <input name="senha" type="password" placeholder="senha" required>
+        <label for="senhaVerify">Repita a senha:</label>
+        <input name="senhaVerify" type="password" placeholder="confirme a senha" required>
+        <label for="adm">Perfil de administrador?</label>
+        <select name="adm" id="">
+            <option value="0">Não</option>
+            <option value="1">Sim</option>
+        </select>
+        <input type="submit" value="Cadastrar Novo Usuário">
+    </form>
+</div>

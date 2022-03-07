@@ -1,0 +1,77 @@
+<section class="container flex-row">
+    <a href="../" class="return-button flex-column arrow-button"><span class="material-icons return-icon">&#xe5c4;</span></a>
+    <div class="ramal-container flex-column">
+        <h1>Pagina do ramal</h1>
+        <div class="card-item flex-row">
+            <h2>Número:</h2>
+            <h2>{{ramalData.numero}}</h2>
+        </div>
+        <div class="card-item  flex-row">
+            <h2>Usuário:</h2>
+            <h2>{{ramalData.userNome}}</h2>
+        </div>
+        <div class="card-item  flex-row">
+            <h2>Local:</h2>
+            <h2>{{ramalData.localNome}}</h2>
+        </div>
+        <div class="card-item  flex-row">
+            <h2>Bastidor:</h2>
+            <h2>{{ramalData.bastidor}}</h2>
+        </div>
+        <div class="card-item  flex-row">
+            <h2>Slot:</h2>
+            <h2>{{ramalData.slot}}</h2>
+        </div>
+        <div class="card-item  flex-row">
+            <h2>Terminação no Software:</h2>
+            <h2>{{ramalData.terminacaoSoftaware}}</h2>
+        </div>
+        <div class="card-item  flex-row">
+            <h2>Terminação na Placa:</h2>
+            <h2>{{ramalData.terminacaoPlaca}}</h2>
+        </div>
+        <div class="card-item  flex-row">
+            <h2>Grupo de Captura:</h2>
+            <h2>{{ramalData.grupo}}</h2>
+        </div>
+        <div class="card-item  flex-row">
+            <h2>Categoria:</h2>
+            <h2>{{ramalData.categoria}}</h2>
+        </div>
+        <div class="card-item  flex-row">
+            <h2>Tipo de Ramal:</h2>
+            <h2>{{ramalData.tipo}}</h2>
+        </div>
+        {{#if ramalData.ddr}}
+        <div class="card-item  flex-row">
+            <h2>DDR:</h2>
+            <h2>SIM</h2>
+        </div>
+        {{else}}
+        <div class="card-item  flex-row">
+            <h2>DDR:</h2>
+            <h2>NÃO</h2>
+        </div>
+        {{/if}}
+        <div class="card-item  flex-row">
+            <h2>Livre?</h2>
+            {{#if ramalData.disponibilidade}}
+            <h2>SIM</h2>
+            {{else}}
+            <h2>NÃO</h2>
+            {{/if}}
+        </div>
+        <h2>Observações:</h2>
+        <br>
+        <div class="obs">{{ramalData.observacao}}</div>
+        <div class="botoes flex-row">
+            <form action="/ramais/ramal/edit-form/{{ramalData.id}}?_method=PUT" method="post">
+                <input type="submit" value="Editar">
+            </form>
+            <form action="/ramal/liberar-form/{{ramalData.id}}?_method=PUT" method="post">
+                <input type="submit" value="Liberar">
+            </form>
+        </div>
+    </div>
+
+</section>

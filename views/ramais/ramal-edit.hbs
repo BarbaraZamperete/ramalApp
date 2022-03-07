@@ -1,0 +1,95 @@
+<div class="add-ramal-container flex-column">
+    <form action="/ramal/edit-ramal" method="post" class="add-ramal flex-column">
+        <div class="flex-row">
+            <div class="area1 flex-column">
+                <label for="numero">Número do Ramal:</label>
+                <input type="text" name="numero" id="" placeholder="Ramal" value="{{ramalData.numero}}"
+                    readonly='readonly'>
+
+                <label for="userNome">Nome/Matrícula do Usuário:</label>
+                <textarea name="userNome" id="" cols="30" rows="1">{{ramalData.userNome}}</textarea>
+                <h5>*Necessário para ramais do tipo Virtual</h5>
+                <label for="localNome">Local/Setor:</label>
+                <textarea name="localNome" id="" cols="30" rows="1">{{ramalData.localNome}}</textarea>
+                <label for="categoria">Categoria:</label>
+                <textarea name="categoria" id="" cols="30" rows="1">{{ramalData.categoria}}</textarea>
+                <label for="ddr">DRR:</label>
+                <select name="ddr" id="">
+                    <option value='1'>Sim</option>
+                    <option value='0'>Não</option>
+                </select>
+
+            </div>
+
+            <div class="area1 flex-column">
+                <label for="grupo">Grupo de Captura:</label>
+                <textarea name="grupo" id="" cols="30" rows="1">{{ramalData.grupo}}</textarea>
+                <label for="tipo">Tipo:</label>
+                {{#if ip}}
+                <select name="tipo" id="tipo">
+                    <option value="virtual">Ramal Virtual</option>
+                    <option value="ip" selected>Ramal IP</option>
+                    <option value="digital">Ramal Digital</option>
+                    <option value="analogico">Ramal Analógico</option>
+                </select>
+                {{/if}}
+                {{#if virtual}}
+                <select name="tipo" id="tipo">
+                    <option value="virtual" selected>Ramal Virtual</option>
+                    <option value="ip">Ramal IP</option>
+                    <option value="digital">Ramal Digital</option>
+                    <option value="analogico">Ramal Analógico</option>
+                </select>
+                {{/if}}
+                {{#if digital}}
+                <select name="tipo" id="tipo">
+                    <option value="virtual">Ramal Virtual</option>
+                    <option value="ip">Ramal IP</option>
+                    <option value="digital" selected>Ramal Digital</option>
+                    <option value="analogico">Ramal Analógico</option>
+                </select>
+                {{/if}}
+                {{#if analogico}}
+                <select name="tipo" id="tipo">
+                    <option value="virtual">Ramal Virtual</option>
+                    <option value="ip">Ramal IP</option>
+                    <option value="digital">Ramal Digital</option>
+                    <option value="analogico" selected>Ramal Analógico</option>
+                </select>
+                {{/if}}
+                <div class="flex-column analogico-digital-area">
+                    <label for="bastidor">Bastidor:</label>
+                    <textarea name="bastidor" id="" cols="30" rows="1">{{ramalData.bastidor}}</textarea>
+
+                    <label for="slot">Slot:</label>
+                    <textarea name="slot" id="" cols="30" rows="1">{{ramalData.slot}}</textarea>
+
+                    <label for="terminacaoSoftaware">Terminação no Software:</label>
+                    <textarea name="terminacaoSoftaware" id="" cols="30"
+                        rows="1">{{ramalData.terminacaoSoftaware}}</textarea>
+                </div>
+            </div>
+        </div>
+        <label for="observacao">Observações:</label>
+                <textarea name="observacao" id="obs-add" cols="30" rows="3">{{ramalData.observacao}}</textarea>
+        <div class="flex-row opcoes">
+            <a href="../{{ramalData.id}}" class="return-button flex-row voltar"><span
+                    class="material-icons">&#xe5c4;</span>CANCELAR</a>
+            <input type="submit" value="SALVAR ALTERAÇÕES">
+
+        </div>
+    </form>
+</div>
+<script>
+    const tipo = document.getElementById("tipo")
+    tipo.addEventListener('change', (event) => {
+        const result = event.target.value;
+        const areaHW = document.querySelector(".analogico-digital-area")
+        console.log(result);
+        if ((result == "digital") || result == "analogico") {
+            areaHW.classList.remove("display-none");
+        } else {
+            areaHW.classList.add("display-none");
+        }
+    })
+</script>

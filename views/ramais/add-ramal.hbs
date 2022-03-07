@@ -1,0 +1,87 @@
+{{!-- <div class="add-ramal-container flex-column">
+    <form action="/add-ramal" method="post" class="add-ramal flex-column">
+        <input type="text" name="numero" id="" placeholder="Ramal" required>
+        <input type="text" name="userNome" id="" placeholder="Nome do Usuário">
+        <input type="text" name="localNome" id="" placeholder="Local do Ramal">
+        <input type="text" name="bastidor" id="" placeholder="Bastidor">
+        <input type="text" name="slot" id="" placeholder="Slot">
+        <input type="text" name="terminacaoSoftaware" id="" placeholder="Terminação Digital">
+        <input type="text" name="grupo" id="" placeholder="Grupo">
+        <input type="text" name="categoria" id="" placeholder="Categoria">
+        <select name="tipo" id="" required>
+            <option value="virtual">Ramal Virtual</option>
+            <option value="ip">Ramal IP</option>
+            <option value="digital">Ramal Digital</option>
+            <option value="analogico">Ramal Analógico</option>
+        </select>
+        <label for="ddr">DRR:</label>
+        <select name="ddr" id="" required>
+            <option value='1'>Sim</option>
+            <option value='0'>Não</option>
+        </select>
+        <textarea name="observacao" id="" cols="30" rows="10" placeholder="Observações..."></textarea>
+        <input type="submit" value="ADICIONAR RAMAL" class="add-ramal-btn">
+    </form>
+</div> --}}
+
+<div class="add-ramal-container flex-column">
+    <form action="/add-ramal" method="post" class="add-ramal flex-column">
+        <div class="flex-row">
+            <div class="area1 flex-column">
+                <label for="numero">Número do Ramal:</label>
+                <input type="text" name="numero" id="" placeholder="Ramal" required>
+                <label for="userNome">Nome/Matrícula do Usuário:</label>
+                <input type="text" name="userNome" id="" placeholder="Nome do Usuário">
+                <h5>*Necessário para ramais do tipo Virtual</h5>
+                <label for="localNome">Local/Setor:</label>
+                <input type="text" name="localNome" id="" placeholder="Local do Ramal">
+                <label for="grupo">Grupo de Captura:</label>
+                <input type="text" name="grupo" id="" placeholder="Grupo">
+                <label for="ddr">DRR:</label>
+                <select name="ddr" id="">
+                    <option value='1'>Sim</option>
+                    <option value='0'>Não</option>
+                </select>
+            </div>
+            <div class="area1 flex-column">
+                <label for="categoria">Categoria:</label>
+                <input type="text" name="categoria" id="" placeholder="Categoria">
+
+                <label for="tipo">Tipo:</label>
+                <select name="tipo" id="tipo">
+                    <option value="virtual">Ramal Virtual</option>
+                    <option value="ip">Ramal IP</option>
+                    <option value="digital" id="digital">Ramal Digital</option>
+                    <option value="analogico" id="analogico" selected>Ramal Analógico</option>
+                </select>
+                <div class="flex-column analogico-digital-area">
+                    <label for="bastidor">Bastidor:</label>
+                    <input type="text" name="bastidor" id="" placeholder="Bastidor">
+                    <label for="slot">Slot:</label>
+                    <input type="text" name="slot" id="" placeholder="Slot">
+                    <label for="terminacaoSoftaware">Terminação no Software:</label>
+                    <input type="text" name="terminacaoSoftaware" id="" placeholder="Terminação Digital">
+                </div>
+            </div>
+        </div>
+        <label for="observacao">Observações:</label>
+        <textarea name="observacao" id="obs-add" cols="30" rows="3"></textarea>
+        <div class="flex-row opcoes" id="cadastrar">
+            <input type="submit" value="CADASTRAR">
+        </div>
+    </form>
+</div>
+
+<script>
+    const tipo = document.getElementById("tipo")
+    tipo.addEventListener('change', (event) => {
+        const result = event.target.value;
+        const areaHW = document.querySelector(".analogico-digital-area")
+        console.log(result);
+        if ((result == "digital") || result == "analogico") {
+            areaHW.classList.remove("display-none");
+        } else {
+            areaHW.classList.add("display-none");
+        }
+    })
+</script>

@@ -1,0 +1,445 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: rgb(214, 248, 245);
+    
+}
+/* ######################################################################################################### */
+/*############################################## GERAL #####################################################*/
+/* ######################################################################################################### */
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.container {
+    max-width: 1500px;
+    margin: auto;
+}
+.visivel{
+    display: flex !important;
+    flex-direction: row !important;
+}
+.return-icon{
+    font-size: 40px;
+    color: white;
+}
+.arrow-button{
+    background-color: blue;
+    width: 50px;
+    height: 50px;
+    margin-top: 30px;
+    margin-left: 120px;
+    position: absolute;
+}
+.return-button{  
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    text-decoration: none;
+}
+.voltar{
+    background-color: red;
+    color: white;
+    margin: 5px;
+    font-size: 20px;
+    padding: 5px;
+    width: 300px;
+}
+.fechar{
+    height: 40px;
+    width: 40px;
+    background-color: blue;
+    border: none;
+    margin-left: 0px;
+    position: absolute;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    cursor: pointer;
+}
+.fechar-icon{
+    font-weight: bolder;
+    font-size: 28px;
+    color: white;
+}
+.box-msg{
+    border-radius: 30px;
+    margin-top: 20px;
+    text-align: center;
+    max-width: 500px;
+    padding: 3px;
+    font-size: 14px;
+}
+.success{
+    background-color: rgb(172, 221, 172);
+    color: green;
+}
+.alert{
+    color: red;
+    background-color: rgb(246, 181, 181);
+}
+.display-none{
+    display: none;
+}
+
+
+
+/* ######################################################################################################### */
+/* ######################################### INDEX ######################################################### */
+/* ######################################################################################################### */
+.inicio {
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.box-menu {
+    /* background-color: rgb(11, 1, 63); */
+    height: 700px;
+    width: 700px;
+
+    align-items: center;
+    /* justify-content: center; */
+    text-align: center;
+
+    border-radius: 10px;
+}
+
+.opcao {
+    font-size: 28px;
+    text-decoration: none;
+    color: white;
+    margin: 5px;
+    padding: 10px;
+    background-color: blue;
+    width: 50%;
+    border-radius: 10px;
+}
+/* ######################################################################################################### */
+/* ########################## ADD USUÁRIO ################################################################## */
+/* ######################################################################################################### */
+.add-user-form{
+    justify-content: center;
+    margin-top: 30px;
+}
+.add-user-form form{
+    max-width: 300px;
+    margin: auto;
+}
+.add-user-form form label,.add-user-form form select{
+    margin: 0;
+}
+.add-user-form form select{
+    max-width: 300px;
+}
+.add-user-form form input{
+    /* margin-top: 10px; */
+    font-size: 24px;
+    padding: 3px;
+    margin-bottom: 5px;
+}
+.add-user-form form input[type=submit]{
+    background-color: blue;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-top: 15px;
+}
+/* ######################################################################################################### */
+/* ########################## BUSCAR RAMAL ################################################################## */
+/* ######################################################################################################### */
+.buscar-ramal{
+    margin-top: 30px;
+    text-align: center;
+    align-items: center;
+}
+.buscar-ramal #barra1{
+    width: 100%;
+    height: 2px;
+    background-color: rgb(125, 197, 191);
+    
+}
+.buscar-ramal .tipo-busca{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background-color: rgb(125, 197, 191);
+    border-radius: 20px;
+    padding: 10px;
+}
+.buscar-ramal form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+.buscar-ramal input{
+    text-transform: uppercase;
+}
+.buscar-ramal h2{
+    margin: 10px;
+}
+.busca-input{
+    font-size: 24px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+    margin-right: 10px;
+}
+.search-button{
+    background-color: blue;
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    border: none
+}
+.search-button span{
+    color: white;
+    font-size: 28px;
+}
+.ramal-buscado{
+    width: 110px;
+    height: 70px;
+    margin: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+.ramal-buscado button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+}
+.ramal-area{
+    display: none;
+    border: 2px solid blue;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.sub-area-ramal{
+    margin: 0px 20px;
+}
+
+
+/* ######################################################################################################### */
+/* ########################## TODOS RAMAIS ################################################################## */
+/* ######################################################################################################### */
+
+/*Menu lateral*/
+.menu-lateral{
+    margin-left: 40px;
+    margin-right: -50px;
+    margin-top: 30px;
+    width: 250px;
+    height: 300px;
+    border:  2px solid blue;
+    border-radius: 20px;
+    padding: 20px 10px;
+}
+.menu-lateral h2{
+    margin-left: 5px;
+    font-size: 28px;
+    font-weight: 400;
+}
+.menu-lateral h2 span{
+    font-weight: 600;
+}
+.menu-lateral form{
+    margin-top: 10px;
+    font-size: 18px;
+    /* align-items: center; */
+}
+.menu-lateral form select{
+    width: 95%;  
+    font-size: 18px;
+     
+}
+.menu-lateral form input[type="submit"]{
+    background-color: blue;
+    font-size: 20px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    padding: 5px;
+    width: 95%;
+    align-self: center;
+}
+
+
+/*Ramais*/
+.livre {
+    background-color: green;
+}
+
+.ocupado {
+    background-color: red;
+}
+.virtual {
+    background-color: blue;
+}
+
+.ramais-container {
+    max-width: 1440px;
+    margin: 30px auto;
+    flex-wrap: wrap;
+}
+.nao-encontrado{
+    margin: auto;
+}
+
+.ramal-card {
+    margin: 10px;
+    max-width: 80px;
+    max-height: 40px; 
+    padding: 5px 10px;
+
+    text-align: center;
+    border-radius: 10px;
+
+}
+
+.ramal-card input {
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+/* ######################################################################################################### */
+/* ########################## ADICIONAR RAMAIS ################################################################## */
+/* ######################################################################################################### */
+
+.add-ramal-container {
+    align-items: center;
+    margin-top: 30px;
+}
+.add-ramal input, textarea{
+    text-transform: uppercase;
+}
+.add-ramal input,
+select,
+label, textarea:not(textarea[id="obs-add"]){
+    margin: 5px;
+    font-size: 20px;
+    padding: 5px;
+    width: 350px;
+}
+
+.add-ramal textarea[name="observacao"], label[for="observacao"]{
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    font-size: 24px;
+}
+.add-ramal h5{
+    margin-left: 5px;
+    padding-left: 5px;
+    font-weight: 300;
+}
+
+.add-ramal input[type=submit] {
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    width: 300px;
+}
+.analogico-digital-area{
+    background-color: rgb(125, 197, 191) ;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+#cadastrar{
+    margin-top: 30px;
+}
+
+/* ######################################################################################################### */
+/* ########################## EDITAR RAMAIS ################################################################## */
+/* ######################################################################################################### */
+.area1{
+    margin: 10px;
+}
+.opcoes{
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+/* ######################################################################################################### */
+/* ########################## PAGINA DO RAMAL################################################################## */
+/* ######################################################################################################### */
+
+.ramal-container {
+    text-align: center;
+    max-width: 700px;
+    min-width: 500px;
+    margin: 30px auto;
+
+}
+
+
+.card-item {
+    margin-top: 10px;
+    justify-content: space-between;
+    /* border-bottom: 2px solid blue; */
+}
+
+.obs {
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    min-height: 100px;
+    min-width: 100px;
+    text-align: justify;
+    padding: 10px;
+    white-space: pre-wrap;
+    /* CSS3 */
+    white-space: -moz-pre-wrap;
+    /* Firefox */
+    white-space: -pre-wrap;
+    /* Opera <7 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* IE */
+}
+
+.botoes {
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.botoes input{
+    color: white;
+    font-size: 24px;
+    max-width: 150px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+.botoes input[value=Liberar]{
+    background-color: red;
+}
+.botoes input[value=Editar]{
+    background-color: blue;
+}

@@ -1,0 +1,9 @@
+<section class="container">
+    <h1>Deseja realmente limpar os dados do ramal {{ramalData.numero}}?</h1>
+    <form action="/ramal/liberar/{{ramalData.id}}" method="post">
+        <input type="submit" value="Liberar">
+    </form>
+    <form action="/ramais/ramal/{{ramalData.id}}" method="post">
+        <input type="submit" value="Cancelar">
+    </form>
+</section>

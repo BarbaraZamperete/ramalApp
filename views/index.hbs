@@ -1,0 +1,16 @@
+{{#if user}}
+<section class="inicio flex-column">
+    <div class="box-menu flex-column">
+        <a href="/ramais" class="opcao">Ver todos os Ramais</a>
+        <a href="/add-ramal-form" class="opcao">Adicionar um Ramal</a>
+        <a href="/ramais/buscar" class="opcao">Buscar Ramal</a>
+    </div>
+</section>
+{{else}}
+<section class="inicio flex-column">
+    <div class="box-menu flex-column">
+        <a href="/login" class="opcao">Logar</a>
+    </div>
+</section>
+
+{{/if}}
